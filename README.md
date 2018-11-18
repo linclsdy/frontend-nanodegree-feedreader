@@ -14,7 +14,7 @@ Whether you work in an organization that uses test-driven development or in an o
 1. It will load the page directly and run all the tests at the bottom of the page.
 2. All test suite can be run and clickable individually for testing. 
 
-## Detail steps: 
+## Detail Steps: 
 1. First Test called "RSS Feeds", there are three tests including:
     * RSS Feeds are defined. 
     * RSS Feeds have URLs defined and that the URLs are not empty. 
