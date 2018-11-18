@@ -13,3 +13,22 @@ Whether you work in an organization that uses test-driven development or in an o
 ## How to Use this Application:
 1. It will load the page directly and run all the tests at the bottom of the page.
 2. All test suite can be run and clickable individually for testing. 
+
+## Detail steps: 
+1. First Test called "RSS Feeds", there are three tests including:
+    a. RSS Feeds are defined. 
+    b. RSS Feeds have URLs defined and that the URLs are not empty. 
+    c. RSS Feeds have names defined and that the names are not empty.
+
+2. Second Test called "The menu", there are two tests including:
+    a. The menu is hidden by default.
+    b. The menu display toggled when clicked.
+
+3. Third Test called "Initial Entries", there is a test including:
+    a. Initial Entries at least a single .entry element within the .feed container.
+
+4. Fourth Test called "New Feed Selection", there is a test including:
+    a. New Feed Selection when a new feed is loaded that the content actually changes.
+
+
+ 
