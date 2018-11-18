@@ -62,12 +62,8 @@ $(function() {
          * hiding/showing of the menu element.
          */
 
-        let body = document.getElementsByTagName("body")[0]; // read body element
-        let menuicon = document.querySelectorAll('.menu-icon-link')[0]; // read menu-icon-link element
-
         it('is hidden by default', function() {
-            expect(body.className).toBeDefined(); // test if body classname was defined
-            expect(body.className).toBe("menu-hidden"); // test classname menu-hidden is present
+            expect($("body").hasClass("menu-hidden")).toBe(true); // test if body classname was defined and present
         });
 
 
@@ -78,10 +74,10 @@ $(function() {
           */
 
         it('display toggled when clicked', function() {
-            menuicon.click(); // simulate clicking the menu icon
-            expect(body.className).toBe("") // test if classname was empty string
-            menuicon.click(); // simulate clicking the menu icon again
-            expect(body.className).toBe("menu-hidden") // test classname menu-hidden is present
+            $('.menu-icon-link').trigger( "click" );
+            expect($("body").hasClass("menu-hidden")).not.toBe(true) // test if classname was empty string
+            $('.menu-icon-link').trigger( "click" );
+            expect($("body").hasClass("menu-hidden")).toBe(true) // test classname menu-hidden is present
         });
 
     });
@@ -100,9 +96,7 @@ $(function() {
         });
 
         it("at least a single .entry element within the .feed container", function(done) {
-            const feed = document.querySelectorAll('.feed')[0]; // read the loaded feed
-            const entries = feed.querySelectorAll('.entry')[0]; // read the entries from feed
-            expect(entries.lenght).not.toBe(0);  // test if entries were not empty
+            expect($('.feed .entry').length).toBeGreaterThan(0);  // test if entry is greater than 0
             done();
         });
     }); 
@@ -118,9 +112,9 @@ $(function() {
 
         beforeEach(function(done) {
             loadFeed(0, function() { // simulate loadFeed function for the first feed
-                previousFeed = document.querySelectorAll('.feed')[0].innerHTML; // read the content of the first feed
+                previousFeed = $('.feed')[0].innerHTML; // read the content of the first feed
                 loadFeed(1, function() { // simulate loadFeed function for the next feed
-                    newFeed = document.querySelectorAll('.feed')[0].innerHTML; // read the content of the next feed
+                    newFeed = $('.feed')[0].innerHTML; // read the content of the next feed
                     done(); // flag done when finished
                 });
             });
